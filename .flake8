@@ -1,0 +1,42 @@
+[flake8]
+# Use the following flake8 plugins:
+# ANN   : flake8-annotations warnings
+# B,B9  : flake8-bugbear
+# BLK   : flake8-black
+# C     : mccabe code complexity checks
+# D     : flake8-docstrings warnings
+# F     : pyflakes errors
+# I     : flake8-isort
+# S     : flake8-bandit, plugin changed B to S
+# W,E   : pycodestyle (pep8) warnings and errors
+select = ANN,B,B9,BLK,C,D,E,F,I,S,W
+
+# Function complexity and line length
+max-complexity = 10
+max-line-length = 95
+
+# Ignore these flake8 errors across the board.
+extend-ignore =
+    # Missing type annotation for self
+    ANN101,
+    # Missing type annotation for cls in classmethod
+    ANN102,
+    # Dynamically typed expressions (typing.Any) are disallowed
+    ANN401,
+    # Missing docstring in public module
+    D100,
+    # Missing docstring in public package
+    D104,
+    # No blank lines allowed after function docstring
+    D202,
+    # Colons should not have whitespace before them
+    E203,
+    # Line break before binary operator
+    W503,
+
+# import order
+application-import-names = src/*,tests
+import-order-style = google
+
+# docstrings
+docstring-convention = google
